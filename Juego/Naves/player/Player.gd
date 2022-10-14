@@ -10,6 +10,9 @@ export var potencia_rotacion : int = 280
 # atributos
 var empuje:Vector2 = Vector2.ZERO
 var dir_rotacion:int = 0
+# atributos onready
+
+onready var canion:Canion = $Canion
 
 #metodos 
 
