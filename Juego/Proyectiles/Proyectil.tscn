@@ -22,3 +22,5 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( -0.0992123, -0.0992132 )
 scale = Vector2( 0.990079, 0.60315 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

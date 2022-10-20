@@ -22,7 +22,7 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	apply_torque_impulse(dir_rotacion * potencia_rotacion)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	player_input()
 	
 func player_input()->void:
@@ -39,3 +39,11 @@ func player_input()->void:
 		dir_rotacion -=1
 	elif Input.is_action_pressed("rotar_horario"):
 		dir_rotacion +=1
+
+	#disparo
+
+	if Input.is_action_pressed("disparo_principal"):
+		canion.set_esta_disparando(true)	
+
+	if Input.is_action_just_released("disparo_principal"):
+		canion.set_esta_disparando(false)	
