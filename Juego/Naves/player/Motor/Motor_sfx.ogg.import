@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Motor_sfx.ogg-127a4b68a01f477e8146b8c3b2985295.oggstr"
+
+[deps]
+
+source_file="res://Juego/Naves/player/Motor/Motor_sfx.ogg"
+dest_files=[ "res://.import/Motor_sfx.ogg-127a4b68a01f477e8146b8c3b2985295.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
