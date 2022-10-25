@@ -2,6 +2,10 @@
 class_name Player
 extends RigidBody2D
 
+##enums
+
+enum ESTADO {SPAWN, VIVO, INVENCIBLE, MUERTO}
+
 ## atributos export 
 
 export var potencia_motor : int = 20
@@ -11,15 +15,27 @@ export var estela_maxima : int = 150
 # atributos
 var empuje:Vector2 = Vector2.ZERO
 var dir_rotacion:int = 0
+var estado_actual:int = ESTADO.SPAWN
+
 # atributos onready
 
 onready var motor_sfx:Motor = $MotorSFX
 onready var canion:Canion = $Canion
 onready var laser:RayoLaser = $LaserBeam2D
 onready var estela:Estela = $EstelaPuntoInicio/Trail2D
-#metodos 
+onready var colisionador:CollisionShape2D = $CollisionShape2D
+
+#metodos
+
+func _ready() -> void:
+	controlador_estados(estado_actual)
+	 
 
 func _unhandled_input(event: InputEvent) -> void:
+	
+	if not esta_input_activo():
+		return
+	
 	#disparoRayo
 	if event.is_action_pressed("disparo_secundario"):
 		laser.set_is_casting(true)
@@ -49,6 +65,10 @@ func _process(_delta: float) -> void:
 	player_input()
 	
 func player_input()->void:
+	
+	if not esta_input_activo():
+		return
+	
 	#empuje
 	empuje = Vector2.ZERO
 	if Input.is_action_pressed("mover_adelante"):
@@ -70,3 +90,32 @@ func player_input()->void:
 
 	if Input.is_action_just_released("disparo_principal"):
 		canion.set_esta_disparando(false)	
+
+func controlador_estados(nuevo_estado:int) -> void:
+		match nuevo_estado:
+			ESTADO.SPAWN:
+				colisionador.set_deferred("disabled", true)
+				canion.set_puede_disparar(false)
+			ESTADO.VIVO:
+				colisionador.set_deferred("disabled", false)
+				canion.set_puede_disparar(true)	
+			ESTADO.INVENCIBLE:
+				colisionador.set_deferred("disabled", true)
+			ESTADO.MUERTO:
+				colisionador.set_deferred("disabled", true)
+				canion.puede_disparar(true)
+				queue_free()
+			_:
+				printerr("error de estado")
+		
+		estado_actual = nuevo_estado					
+
+func esta_input_activo() -> bool:
+	if estado_actual in [ESTADO.MUERTO, ESTADO.SPAWN]:
+		return false
+	return true	
+
+
+func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+	if anim_name == "spawn":
+		controlador_estados(ESTADO.VIVO)
