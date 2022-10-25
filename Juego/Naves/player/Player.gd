@@ -25,7 +25,11 @@ onready var laser:RayoLaser = $LaserBeam2D
 onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var colisionador:CollisionShape2D = $CollisionShape2D
 
+
 #metodos
+func destruir() -> void:
+	controlador_estados(ESTADO.MUERTO)
+	
 
 func _ready() -> void:
 	controlador_estados(estado_actual)
@@ -103,7 +107,8 @@ func controlador_estados(nuevo_estado:int) -> void:
 				colisionador.set_deferred("disabled", true)
 			ESTADO.MUERTO:
 				colisionador.set_deferred("disabled", true)
-				canion.puede_disparar(true)
+				canion.set_puede_disparar(true)
+				Eventos.emit_signal("nave_destruida", global_position)
 				queue_free()
 			_:
 				printerr("error de estado")
