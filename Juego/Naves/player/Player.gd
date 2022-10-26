@@ -11,6 +11,7 @@ enum ESTADO {SPAWN, VIVO, INVENCIBLE, MUERTO}
 export var potencia_motor : int = 20
 export var potencia_rotacion : int = 280
 export var estela_maxima : int = 150
+export var hitpoints : float = 15
 
 # atributos
 var empuje:Vector2 = Vector2.ZERO
@@ -24,7 +25,8 @@ onready var canion:Canion = $Canion
 onready var laser:RayoLaser = $LaserBeam2D
 onready var estela:Estela = $EstelaPuntoInicio/Trail2D
 onready var colisionador:CollisionShape2D = $CollisionShape2D
-
+onready	var impacto_sfx: AudioStreamPlayer = $Impacto_sfx
+onready var escudo:Escudo = $Escudo
 
 #metodos
 func destruir() -> void:
@@ -59,6 +61,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	if(event.is_action_released("mover_adelante") 
 		or event.is_action_released("mover_atras")):
 			motor_sfx.sonido_off()	
+	
+	#control escudo
+	if event.is_action_pressed("escudo") and not escudo.get_esta_activado():
+		escudo.activar()
 			
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	apply_central_impulse(empuje.rotated(rotation))
@@ -124,3 +130,10 @@ func esta_input_activo() -> bool:
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == "spawn":
 		controlador_estados(ESTADO.VIVO)
+
+func recibir_danio(danio:float)-> void:
+	impacto_sfx.play()
+	hitpoints -= danio
+	if hitpoints <=0.0:
+		destruir()
+	impacto_sfx.stop()

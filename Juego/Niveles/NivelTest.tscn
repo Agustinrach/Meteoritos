@@ -11,7 +11,7 @@ script = ExtResource( 1 )
 explosion = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 294.915, 225.037 )
+position = Vector2( 1259.72, 590.267 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
