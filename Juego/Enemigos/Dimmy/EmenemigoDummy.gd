@@ -5,7 +5,7 @@ var hitpoints:float = 10.0
 
 onready var canion:Canion = $Canion
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	canion.set_esta_disparando(true)	
 	
 	
