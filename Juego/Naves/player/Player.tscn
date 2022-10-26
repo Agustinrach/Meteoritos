@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Juego/Naves/player/player_orange.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Naves/player/MaterialFisico.tres" type="PhysicsMaterial" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Juego/Naves/player/Motor/Motor_sfx.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Juego/Naves/player/Motor/MotorSFX.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Juego/Naves/player/Motor/MotorSFX.gd" type="Script" id=9]
+[ext_resource path="res://Juego/Naves/player/Escudo/Escudo.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 34.2585
@@ -88,16 +89,22 @@ lifetime = 0.6
 max_points = 150
 target_path = NodePath("..")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "spawn"
+anims/default = SubResource( 3 )
+anims/spawn = SubResource( 4 )
+
 [node name="MotorSFX" parent="." instance=ExtResource( 8 )]
 stream = ExtResource( 7 )
 script = ExtResource( 9 )
 
 [node name="Tween" type="Tween" parent="MotorSFX"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "spawn"
-anims/default = SubResource( 3 )
-anims/spawn = SubResource( 4 )
+[node name="Impacto_sfx" type="AudioStreamPlayer" parent="."]
+mix_target = 2
+
+[node name="Escudo" parent="." instance=ExtResource( 10 )]
+position = Vector2( -0.656487, 0.230141 )
 
 [connection signal="timeout" from="Canion/TimerEnfriamiento" to="Canion" method="_on_TimerEnfriamiento_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
