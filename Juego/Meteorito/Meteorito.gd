@@ -26,14 +26,19 @@ func crear(pos: Vector2, dir: Vector2, tamanio:float) -> void:
 	# calculo masa, tamaño sprite y de colisioandor
 	mass *= tamanio
 	$Sprite.scale= Vector2.ONE * tamanio
+	
 	#radio = diametro / 2
+	
 	var radio:int = int ($Sprite.texture.get_size().x / 2 * tamanio)
 	var forma_colision : CircleShape2D = CircleShape2D.new()
 	forma_colision.radius = radio
 	$CollisionShape2D.shape = forma_colision
+	
 	#calcular velocidades
-	linear_velocity = vel_lineal_base * dir / tamanio
-	angular_velocity = vel_ang_base * tamanio
+	
+	linear_velocity = (vel_lineal_base * dir / tamanio) * aleatorizar_velocidad()
+	angular_velocity = (vel_ang_base * tamanio) * aleatorizar_velocidad()
+	
 	#calcular hitpoints
 	hitpoints = hitpoints_base * tamanio
 	
@@ -47,4 +52,11 @@ func recibir_danio(danio:float)-> void:
 	
 func destruir() -> void:
 	$CollisionShape2D.set_deferred("disabled", true)
+	Eventos.emit_signal("meteorito_destruido", global_position)
 	queue_free()	
+
+# metodos custom
+
+func aleatorizar_velocidad() -> float:
+	randomize()
+	return rand_range(1.1, 1.4)	
