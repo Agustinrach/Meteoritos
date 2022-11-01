@@ -12,6 +12,14 @@ export var hitpoints_base : float = 10.0
 
 #atributos
 var hitpoints:float
+var esta_en_sector:bool = true setget set_esta_en_sector
+var pos_spawn_origianl:Vector2
+var vel_spawn_original: Vector2
+
+##setters & getters
+
+func set_esta_en_sector (valor : bool) -> void:
+	esta_en_sector = valor
 
 ## metodos
 
@@ -23,6 +31,7 @@ func _ready() -> void:
 
 func crear(pos: Vector2, dir: Vector2, tamanio:float) -> void:
 	position = pos
+	pos_spawn_origianl = position
 	# calculo masa, tamaño sprite y de colisioandor
 	mass *= tamanio
 	$Sprite.scale= Vector2.ONE * tamanio
@@ -37,6 +46,7 @@ func crear(pos: Vector2, dir: Vector2, tamanio:float) -> void:
 	#calcular velocidades
 	
 	linear_velocity = (vel_lineal_base * dir / tamanio) * aleatorizar_velocidad()
+	vel_spawn_original = linear_velocity
 	angular_velocity = (vel_ang_base * tamanio) * aleatorizar_velocidad()
 	
 	#calcular hitpoints
@@ -60,3 +70,14 @@ func destruir() -> void:
 func aleatorizar_velocidad() -> float:
 	randomize()
 	return rand_range(1.1, 1.4)	
+
+# metodos
+
+func _integrate_forces(state: Physics2DDirectBodyState) ->void:
+	if esta_en_sector:
+		return
+	var mi_transform := state.get_transform()
+	mi_transform.origin = pos_spawn_origianl
+	linear_velocity = vel_spawn_original
+	state.set_transform(mi_transform)
+	esta_en_sector = true

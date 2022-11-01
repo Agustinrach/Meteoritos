@@ -68,6 +68,21 @@ _global_script_classes=[ {
 "class": "RayoLaser",
 "language": "GDScript",
 "path": "res://Juego/Proyectiles/Laser/LaserBeam2D.gd"
+}, {
+"base": "CollisionShape2D",
+"class": "SectorMeteoritos",
+"language": "GDScript",
+"path": "res://Juego/CollisionShape2D.gd"
+}, {
+"base": "Node2D",
+"class": "SectorMeteoritoss",
+"language": "GDScript",
+"path": "res://Juego/SectorMeteoritos.gd"
+}, {
+"base": "Area2D",
+"class": "SectorPeligro",
+"language": "GDScript",
+"path": "res://Juego/Peligros/SectorDePeligro.gd"
 } ]
 _global_script_class_icons={
 "Canion": "",
@@ -81,12 +96,16 @@ _global_script_class_icons={
 "Nivel": "",
 "Player": "",
 "Proyectil": "",
-"RayoLaser": ""
+"RayoLaser": "",
+"SectorMeteoritos": "",
+"SectorMeteoritoss": "",
+"SectorPeligro": ""
 }
 
 [application]
 
 config/name="Meteoritos"
+run/main_scene="res://Juego/Niveles/NivelTest.tscn"
 config/icon="res://iconoJuego.png"
 
 [autoload]
@@ -99,7 +118,7 @@ window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
 window/size/always_on_top=true
-window/size/test_width=1280
+window/size/test_width=1080
 window/size/test_height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"

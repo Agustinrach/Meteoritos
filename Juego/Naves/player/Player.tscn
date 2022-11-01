@@ -109,6 +109,8 @@ mix_target = 2
 [node name="Escudo" parent="." instance=ExtResource( 10 )]
 position = Vector2( -0.656487, 0.230141 )
 
+[node name="CameraPlayer" type="Camera2D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Canion/TimerEnfriamiento" to="Canion" method="_on_TimerEnfriamiento_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

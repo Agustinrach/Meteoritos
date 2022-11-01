@@ -1,0 +1,3 @@
+class_name SectorMeteoritos
+extends CollisionShape2D
+
