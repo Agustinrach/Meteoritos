@@ -1,6 +1,7 @@
 #Nivel.gd
 class_name Nivel
 extends Node2D
+var meteoritos_totales : int = 0
 
 ## atributos export 
 
@@ -43,6 +44,8 @@ func crear_contenedores() -> void:
 	contenedor_sector_meteorito.name = "ContenedorSectoresMeteoritos"
 	add_child(contenedor_sector_meteorito)
 	
+
+## conexion señales externas
 	
 
 func _on_disparo(proyectil:Proyectil) -> void:
@@ -67,12 +70,22 @@ func _on_meteorito_destrudio (pos :Vector2) -> void:
 	new_explosion.global_position = pos
 	add_child(new_explosion)
 	
+	controlar_meteoritos_restantes()
+	
 func crear_sector_meteoritos(centro_camara: Vector2, numero_peligros:int) -> void:
+	meteoritos_totales = numero_peligros
 	var new_sector_meteorito:SectorMeteoritoss = 	sector_meteorito.instance()
 	new_sector_meteorito.crear(centro_camara, numero_peligros)
 	camara_nivel.global_position = centro_camara
-	camara_nivel.current = true
 	contenedor_sector_meteorito.add_child(new_sector_meteorito)
+	camara_nivel.zoom = $Player/CameraPlayer.zoom
+	camara_nivel.devolver_zoom_original()
+	transicion_camaras(
+		$Player/CameraPlayer.global_position,
+		camara_nivel.global_position,
+		camara_nivel,
+		tiempo_transicion_camara
+	)
 
 func _on_nave_en_sector_peligro(centro_cam:Vector2, tipo_peligro:String, num_peligro:int) -> void:
 	if tipo_peligro == "Meteorito":
@@ -80,15 +93,36 @@ func _on_nave_en_sector_peligro(centro_cam:Vector2, tipo_peligro:String, num_pel
 	elif tipo_peligro == "Enemigo":
 		pass	
 
-func transicion_camaras (desde:Vector2, hasta:Vector2, camara_actual:Camera2D) -> void:
+func transicion_camaras (desde:Vector2, hasta:Vector2, camara_actual:Camera2D, tiempo_transicion : float) -> void:
 	$TweenCamara.interpolate_property(
 		camara_actual,
 		"global_position",
 		desde,
 		hasta,
-		tiempo_transicion_camara,
+		tiempo_transicion,
 		Tween.TRANS_LINEAR,
 		Tween.EASE_IN_OUT
 	)
 	camara_actual.current = true
 	$TweenCamara.start()
+
+func controlar_meteoritos_restantes()-> void:
+	meteoritos_totales -=1
+	print(meteoritos_totales)
+	if meteoritos_totales ==0:
+		contenedor_sector_meteorito.get_child(0).queue_free()
+		$Player/CameraPlayer.set_puede_hacer_zoom(true)
+		var zoom_actual = $Player/CameraPlayer.zoom
+		$Player/CameraPlayer.zoom = camara_nivel.zoom
+		$Player/CameraPlayer.zoom_suavizado(zoom_actual.x, zoom_actual.y, 1.0)
+		transicion_camaras(
+			camara_nivel.global_position,
+			$Player/CameraPlayer.global_position,
+			$Player/CameraPlayer,
+			tiempo_transicion_camara*0.10
+		) 
+
+
+func _on_TweenCamara_tween_completed(object, key):
+	if object.name == "CameraPlayer":
+		object.global_position = $Player.global_position

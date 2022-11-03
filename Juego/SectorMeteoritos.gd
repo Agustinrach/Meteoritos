@@ -29,11 +29,7 @@ func spawner_aleatorio() -> int:
 	
 func conectar_seniales_detectores() -> void:
 		for detector in $DetectorFueraZona.get_children():
-			detector.connect("body_entered", self, "_on_detector_body_entered")
-		#$DetectorFueraZona/DetectorIzq.connect("body_entered", self, "_on_DetectorIzq_body_entered")
-		#$DetectorFueraZona/DetectorDer.connect("body_entered", self, "_on_DetectorDer_body_entered")
-		#$DetectorFueraZona/DetectorInf.connect("body_entered", self, "_on_DetectorInf_body_entered")
-		#$DetectorFueraZona/DetectorSup.connect("body_entered", self, "_on_DetectorSup_body_entered")	
+			detector.connect("body_entered", self, "_on_detector_body_entered")	
 		
 		
 #señales internas

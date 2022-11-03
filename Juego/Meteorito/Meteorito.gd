@@ -15,6 +15,7 @@ var hitpoints:float
 var esta_en_sector:bool = true setget set_esta_en_sector
 var pos_spawn_origianl:Vector2
 var vel_spawn_original: Vector2
+var esta_Destruido: bool = false
 
 ##setters & getters
 
@@ -56,7 +57,8 @@ func crear(pos: Vector2, dir: Vector2, tamanio:float) -> void:
 func recibir_danio(danio:float)-> void:
 	
 	hitpoints -= danio
-	if hitpoints <=0.0:
+	if hitpoints <=0.0 and not esta_Destruido:
+		esta_Destruido = true
 		destruir()
 	#impacto_sfx.play()	
 	

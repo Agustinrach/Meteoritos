@@ -140,7 +140,10 @@ tracks/1/keys = {
 }
 
 [node name="SectorMeteoritos" type="Node2D"]
+position = Vector2( 671.242, 305.655 )
 script = ExtResource( 2 )
+cantidad_meteoritos = 12
+intervalo_spawn = 3.0
 
 [node name="BordesNavePlayer" type="Node2D" parent="."]
 
@@ -177,6 +180,7 @@ shape = SubResource( 4 )
 [node name="DetectorIzq" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( -1400, 0 )
 collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorIzq"]
 shape = SubResource( 5 )
@@ -184,6 +188,7 @@ shape = SubResource( 5 )
 [node name="DetectorDer" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( 1400, 0 )
 collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorDer"]
 shape = SubResource( 6 )
@@ -191,6 +196,7 @@ shape = SubResource( 6 )
 [node name="DetectorSup" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( 0, -900 )
 collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorSup"]
 shape = SubResource( 7 )
@@ -198,6 +204,7 @@ shape = SubResource( 7 )
 [node name="DetectorInf" type="Area2D" parent="DetectorFueraZona"]
 position = Vector2( 0, 900 )
 collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorFueraZona/DetectorInf"]
 position = Vector2( 7.12744, -3.56354 )
@@ -208,6 +215,13 @@ shape = SubResource( 8 )
 [node name="SpawnerMeteoritos" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( -1150, 0 )
 direccion = Vector2( 1, 0 )
+
+[node name="SpawnerMeteoritos9" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -1156.35, 387.326 )
+direccion = Vector2( 2, -1 )
+
+[node name="SpawnerMeteoritos10" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -1162.7, -342.879 )
 
 [node name="SpawnerMeteoritos2" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( 1150, 0 )
@@ -221,6 +235,14 @@ direccion = Vector2( 0, 1 )
 position = Vector2( 0, 720 )
 direccion = Vector2( 0, -1 )
 
+[node name="SpawnerMeteoritos11" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -520.668, 726.35 )
+direccion = Vector2( 2, -1 )
+
+[node name="SpawnerMeteoritos12" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 590.514, 732.699 )
+direccion = Vector2( -2, -1 )
+
 [node name="SpawnerMeteoritos5" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( -1150, 720 )
 direccion = Vector2( 2, -1 )
@@ -229,43 +251,27 @@ direccion = Vector2( 2, -1 )
 position = Vector2( 1150, 720 )
 direccion = Vector2( -2, -1 )
 
+[node name="SpawnerMeteoritos15" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 1150, 389.82 )
+direccion = Vector2( -2, -1 )
+
 [node name="SpawnerMeteoritos7" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( -1150, -720 )
+position = Vector2( -1150, -726.35 )
+
+[node name="SpawnerMeteoritos13" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( -527.738, -720 )
 
 [node name="SpawnerMeteoritos8" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( 1150, -720 )
 direccion = Vector2( -1, 1 )
 
-[node name="SpawnerMeteoritos9" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( -575, 720 )
-direccion = Vector2( 1, -1 )
-
-[node name="SpawnerMeteoritos10" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( 575, 720 )
-direccion = Vector2( -1, -1 )
-
-[node name="SpawnerMeteoritos11" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( -575, -720 )
-direccion = Vector2( 1, 5 )
-
-[node name="SpawnerMeteoritos12" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( 575, -720 )
-direccion = Vector2( -5, 5 )
-
-[node name="SpawnerMeteoritos13" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( 1150, 360 )
-direccion = Vector2( -4, -1 )
+[node name="SpawnerMeteoritos16" parent="Spawners" instance=ExtResource( 1 )]
+position = Vector2( 1162.7, -288.227 )
+direccion = Vector2( -1, 1 )
 
 [node name="SpawnerMeteoritos14" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( 1150, -360 )
-direccion = Vector2( -6, 1 )
-
-[node name="SpawnerMeteoritos15" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( -1150, 360 )
-direccion = Vector2( 4, -1 )
-
-[node name="SpawnerMeteoritos16" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( -1150, -360 )
+position = Vector2( 559.486, -713.65 )
+direccion = Vector2( -1, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -307,8 +313,4 @@ anims/default = SubResource( 12 )
 stream = ExtResource( 3 )
 volume_db = -16.2833
 
-[connection signal="body_entered" from="DetectorFueraZona/DetectorIzq" to="." method="_on_DetectorIzq_body_entered"]
-[connection signal="body_entered" from="DetectorFueraZona/DetectorDer" to="." method="_on_DetectorDer_body_entered"]
-[connection signal="body_entered" from="DetectorFueraZona/DetectorSup" to="." method="_on_DetectorSup_body_entered"]
-[connection signal="body_entered" from="DetectorFueraZona/DetectorInf" to="." method="_on_DetectorInf_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
