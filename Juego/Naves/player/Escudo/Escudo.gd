@@ -4,7 +4,7 @@ extends Area2D
 
 #atributos
 var esta_activado:bool = false setget, get_esta_activado
-
+var energia_original : float
 ## atributos export
 
 export var energia:float = 8.0
@@ -16,13 +16,12 @@ func get_esta_activado() -> bool:
 	return esta_activado
 
 func _process(delta: float) -> void:
-	energia += radio_desgaste*delta
-	if energia <= 0.0:
-		desactivar()
+	controlar_energia(radio_desgaste*delta)
 
 ##metodos
 
 func _ready() -> void:
+	energia_original = energia
 	set_process(false)
 	controlar_colisionador(true)
 	
@@ -57,3 +56,10 @@ func _on_animation_finished(anim_name: String) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	body.queue_free()
+
+func controlar_energia(consumo:float) -> void:
+	energia+=consumo
+	print("energia escudo : ", energia)
+	
+	if energia <= 0.0:
+		desactivar()
