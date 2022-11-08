@@ -40,7 +40,7 @@ b = Vector2( -1420.14, -40.5316 )
 font_path = "res://TemporalAssets/kenney_fontpackage/Fonts/Kenney Future.ttf"
 
 [sub_resource type="DynamicFont" id=10]
-size = 22
+size = 23
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 9 )

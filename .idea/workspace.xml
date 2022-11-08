@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5e188f57-3373-4912-a23e-f0638033593c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Juego/Enemigos/Dimmy/SpriteDummy.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Enemigos/Dimmy/SpriteDummy.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Estaciones/AreaRecarga.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Estaciones/AreaRecarga.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Estaciones/CargaEstacion.ogg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Estaciones/CargaEstacion.ogg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Estaciones/EstacionRecarga.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Estaciones/EstacionRecarga.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Estaciones/EstacionVacio.ogg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Estaciones/EstacionVacio.ogg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/explosionMeteoritoo.ogg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/explosionMeteoritoo.ogg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/explosion_gradient.tres" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/explosion_gradient.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/explosion_navePlayer.ogg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/explosion_navePlayer.ogg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/meteoritoDim1.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/meteoritoDim1.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/meteoritoDim2.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/meteoritoDim2.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/meteoritoMed1.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/meteoritoMed1.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/meteoritoMed2.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/meteoritoMed2.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/meteoritoPeq1.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/meteoritoPeq1.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/meteoritoPeq2.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/meteoritoPeq2.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/puff.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/puff.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/puff_smooth.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/puff_smooth.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/scraps_gradient.tres" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/scraps_gradient.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Explosiones/sparkle.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Explosiones/sparkle.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Meteorito/impactoMeteorito2.ogg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Meteorito/impactoMeteorito2.ogg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Meteorito/meteorito.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Meteorito/meteorito.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Naves/player/Escudo/forceField.ogg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Naves/player/Escudo/forceField.ogg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Naves/player/Escudo/shield1.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Naves/player/Escudo/shield1.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Naves/player/Escudo/shield2.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Naves/player/Escudo/shield2.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Naves/player/Escudo/shield3.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Naves/player/Escudo/shield3.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Naves/player/Motor/Motor_sfx.ogg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Naves/player/Motor/Motor_sfx.ogg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Naves/player/impactMetal.ogg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Naves/player/impactMetal.ogg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Naves/player/player_orange.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Naves/player/player_orange.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Niveles/Fondos/Fondoblack.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Niveles/Fondos/Fondoblack.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Niveles/Fondos/Fondoblue.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Niveles/Fondos/Fondoblue.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Niveles/Fondos/FondodarkPurple.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Niveles/Fondos/FondodarkPurple.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Niveles/Fondos/Fondopurple.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Niveles/Fondos/Fondopurple.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Niveles/NivelTest.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Niveles/NivelTest.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Proyectiles/Laser/glowing_circle.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Proyectiles/Laser/glowing_circle.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Proyectiles/Laser/laserLarge.ogg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Proyectiles/Laser/laserLarge.ogg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Proyectiles/laserRed.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Proyectiles/laserRed.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/Proyectiles/proyectilEnemigo.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/Proyectiles/proyectilEnemigo.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/SectorMeteoritos.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/SectorMeteoritos.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Juego/advertenciaLluviaMeteoritos.ogg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Juego/advertenciaLluviaMeteoritos.ogg.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default_bus_layout.tres" beforeDir="false" afterPath="$PROJECT_DIR$/default_bus_layout.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default_env.tres" beforeDir="false" afterPath="$PROJECT_DIR$/default_env.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iconoJuego.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/iconoJuego.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="2HHASSM3dWacseuVKreEx8NOwjE" />
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e188f57-3373-4912-a23e-f0638033593c" name="Default Changelist" comment="" />
+      <created>1667931643195</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667931643195</updated>
+    </task>
+    <servers />
+  </component>
+</project>
