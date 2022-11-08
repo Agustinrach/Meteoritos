@@ -23,6 +23,10 @@ sector_meteorito = ExtResource( 9 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 959.617, 551.436 )
+hitpoints = 20.0
+potencia_motor = 18
+potencia_rotacion = 260
+estela_maxima = 150
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 3 )
