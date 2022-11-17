@@ -4,7 +4,7 @@ extends RigidBody2D
 
 ##enums
 
-enum ESTADO {SPAWN, VIVO, INVENCIBLE, MUERTO}
+enum ESTADO{SPAWN, VIVO, INVENCIBLE, MUERTO}
 
 ## atributos export 
 
@@ -22,6 +22,8 @@ onready	var impacto_sfx: AudioStreamPlayer = $Impacto_sfx
 
 onready var canion:Canion = $Canion
 
+onready var barra_salud:ProgressBar  = $BarraSalud
+
 
 
 #metodos
@@ -30,13 +32,11 @@ func destruir() -> void:
 	
 
 func _ready() -> void:
-	controlador_estados(estado_actual)
-	 
-
-
-			
-
 	
+	barra_salud.set_valores(hitpoints)
+
+	 
+	controlador_estados(estado_actual)
 
 
 func controlador_estados(nuevo_estado:int) -> void:
@@ -52,7 +52,7 @@ func controlador_estados(nuevo_estado:int) -> void:
 			ESTADO.MUERTO:
 				colisionador.set_deferred("disabled", true)
 				canion.set_puede_disparar(true)
-				Eventos.emit_signal("nave_destruida", global_position)
+				Eventos.emit_signal("nave_destruida", self,global_position, 3)
 				queue_free()
 			_:
 				printerr("error de estado")
@@ -74,6 +74,7 @@ func recibir_danio(danio:float)-> void:
 	hitpoints -= danio
 	if hitpoints <=0.0:
 		destruir()
+	barra_salud.controlar_barra(hitpoints,true)
 	impacto_sfx.stop()
 
 

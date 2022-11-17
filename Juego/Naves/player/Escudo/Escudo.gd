@@ -58,8 +58,15 @@ func _on_body_entered(body: Node) -> void:
 	body.queue_free()
 
 func controlar_energia(consumo:float) -> void:
-	energia+=consumo
-	print("energia escudo : ", energia)
 	
-	if energia <= 0.0:
+	energia+=consumo
+	
+	if energia > energia_original:
+		energia = energia_original
+		
+	elif energia <= 0.0:
+		Eventos.emit_signal("ocultar_info_escudo")
 		desactivar()
+		return
+		
+	Eventos.emit_signal("cambio_energia_escudo",energia_original,energia)

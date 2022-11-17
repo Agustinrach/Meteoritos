@@ -53,6 +53,7 @@ func set_is_casting(cast: bool) -> void:
 		fill.points[1] = cast_to
 		appear()
 	else:
+		Eventos.emit_signal("ocultar_info_laser")
 		laser_sfx.stop()
 		collision_particles.emitting = false
 		disappear()
@@ -108,5 +109,6 @@ func controlar_energia(consumo:float) -> void:
 	energia+=consumo
 	if energia > energia_original:
 		energia= energia_original
-	print("energia laser : ", energia)
+	Eventos.emit_signal("cambio_energia_laser",energia_original,energia)	
+	
 	

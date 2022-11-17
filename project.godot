@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ProgressBar",
+"class": "BarraSalud",
+"language": "GDScript",
+"path": "res://Juego/UI/BarraSalud/BarraSalud.gd"
+}, {
+"base": "Node2D",
+"class": "BaseEnemiga",
+"language": "GDScript",
+"path": "res://Juego/Estaciones/BaseEnemiga.gd"
+}, {
 "base": "Camera2D",
 "class": "CamaraJuego",
 "language": "GDScript",
@@ -24,10 +34,35 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Proyectiles/Canion.gd"
 }, {
+"base": "NinePatchRect",
+"class": "ContenedorInfo",
+"language": "GDScript",
+"path": "res://Juego/UI/HUD/ContenedorInfo/ContenedorInformacion.gd"
+}, {
+"base": "ContenedorInfo",
+"class": "ContenedorInformacionEnergia",
+"language": "GDScript",
+"path": "res://Juego/UI/HUD/ContenedorInfo/ContenedorInformacionEnergia.gd"
+}, {
+"base": "NaveBase",
+"class": "EnemigoBase",
+"language": "GDScript",
+"path": "res://EnemigoBase.gd"
+}, {
 "base": "Node2D",
 "class": "EnemigoDummy",
 "language": "GDScript",
 "path": "res://Juego/Enemigos/Dimmy/EmenemigoDummy.gd"
+}, {
+"base": "EnemigoBase",
+"class": "EnemigoInterceptor",
+"language": "GDScript",
+"path": "res://Juego/Enemigos/Interceptor/EnemigoInterceptor.gd"
+}, {
+"base": "EnemigoBase",
+"class": "EnemigoOrbital",
+"language": "GDScript",
+"path": "res://Juego/Enemigos/Orbital/EnemigoOrbital.gd"
 }, {
 "base": "Area2D",
 "class": "Escudo",
@@ -89,6 +124,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Juego/Proyectiles/Laser/LaserBeam2D.gd"
 }, {
+"base": "Node2D",
+"class": "ReleDeMasa",
+"language": "GDScript",
+"path": "res://Juego/Estaciones/Rele/ReleMasa.gd"
+}, {
 "base": "CollisionShape2D",
 "class": "SectorMeteoritos",
 "language": "GDScript",
@@ -105,10 +145,17 @@ _global_script_classes=[ {
 "path": "res://Juego/Peligros/SectorDePeligro.gd"
 } ]
 _global_script_class_icons={
+"BarraSalud": "",
+"BaseEnemiga": "",
 "CamaraJuego": "",
 "CamaraPlayer": "",
 "Canion": "",
+"ContenedorInfo": "",
+"ContenedorInformacionEnergia": "",
+"EnemigoBase": "",
 "EnemigoDummy": "",
+"EnemigoInterceptor": "",
+"EnemigoOrbital": "",
 "Escudo": "",
 "EstacionRecarga": "",
 "Estela": "",
@@ -121,6 +168,7 @@ _global_script_class_icons={
 "Player": "",
 "Proyectil": "",
 "RayoLaser": "",
+"ReleDeMasa": "",
 "SectorMeteoritos": "",
 "SectorMeteoritoss": "",
 "SectorPeligro": ""
@@ -135,6 +183,7 @@ config/icon="res://iconoJuego.png"
 [autoload]
 
 Eventos="*res://Juego/Autoloads/Eventos.gd"
+DatosJuego="*res://Juego/Autoloads/DatosJuego.gd"
 
 [display]
 
@@ -210,6 +259,11 @@ recargar_laser={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"unicode":0,"echo":false,"script":null)
  ]
 }
+minimapa={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777218,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -218,6 +272,7 @@ recargar_laser={
 2d_physics/layer_3="meteorito"
 2d_physics/layer_4="proyectilPlayer"
 2d_physics/layer_5="proyectilEnemigo"
+2d_physics/layer_6="base_enemiga"
 
 [physics]
 

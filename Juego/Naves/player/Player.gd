@@ -2,7 +2,7 @@ class_name Player
 extends NaveBase
 
 export var potencia_motor : int = 18
-export var potencia_rotacion : int = 260
+export var potencia_rotacion : int = 20
 export var estela_maxima : int = 150
 
 var empuje:Vector2 = Vector2.ZERO
@@ -22,6 +22,9 @@ func get_escudo()-> Escudo:
 	return escudo	
 	
 	
+func _ready():
+	DatosJuego.set_player_actual(self)
+		
 func _unhandled_input(event: InputEvent) -> void:
 	
 	if not esta_input_activo():
@@ -86,3 +89,9 @@ func player_input()->void:
 
 	if Input.is_action_just_released("disparo_principal"):
 		canion.set_esta_disparando(false)	
+
+func desactivar_controles()->void:
+	controlador_estados(ESTADO.SPAWN)
+	empuje = Vector2.ZERO
+	motor_sfx.sonido_off()
+	laser.set_is_casting(false)

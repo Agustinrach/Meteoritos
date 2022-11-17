@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Juego/Naves/player/player_orange.png" type="Texture" id=1]
 [ext_resource path="res://Juego/Naves/player/CameraPlayer.tscn" type="PackedScene" id=2]
@@ -11,9 +11,10 @@
 [ext_resource path="res://Juego/Naves/NaveBase.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Juego/Naves/player/Escudo/Escudo.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Juego/Naves/player/MaterialFisico.tres" type="PhysicsMaterial" id=11]
+[ext_resource path="res://Juego/Naves/player/Motor/MotorSFX.gd" type="Script" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 15.0281
+radius = 36.1056
 
 [node name="Player" instance=ExtResource( 9 )]
 z_index = 50
@@ -27,6 +28,7 @@ can_sleep = false
 linear_damp = 1.5
 angular_damp = 4.5
 script = ExtResource( 3 )
+potencia_rotacion = 30
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 1 )
@@ -47,6 +49,7 @@ position = Vector2( -5.68452, 0.23597 )
 
 [node name="MotorSFX" parent="." index="6" instance=ExtResource( 8 )]
 stream = ExtResource( 7 )
+script = ExtResource( 12 )
 
 [node name="AnimationPlayer" parent="." index="7" instance=ExtResource( 4 )]
 
