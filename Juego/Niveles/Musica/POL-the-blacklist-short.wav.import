@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/POL-the-blacklist-short.wav-7962c724926d79e51f6643f748d4ab4a.sample"
+
+[deps]
+
+source_file="res://Juego/Niveles/Musica/POL-the-blacklist-short.wav"
+dest_files=[ "res://.import/POL-the-blacklist-short.wav-7962c724926d79e51f6643f748d4ab4a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BtonSonido.ogg-da6d898a9650660cece751ef6b59757c.oggstr"
+
+[deps]
+
+source_file="res://Juego/Autoloads/BtonSonido.ogg"
+dest_files=[ "res://.import/BtonSonido.ogg-da6d898a9650660cece751ef6b59757c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
