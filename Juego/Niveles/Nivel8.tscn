@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/Estaciones/BaseEnemiga.tscn" type="PackedScene" id=4]
+
+[node name="Nivel8" instance=ExtResource( 1 )]
+prox_nivel = "res://Juego/Niveles/Nivel9.tscn"
+
+[node name="Player" parent="." index="1"]
+hitpoints = 80.0
+
+[node name="SectorDePeligro" parent="TriggersEnemigos" index="0" instance=ExtResource( 2 )]
+position = Vector2( -441.642, -594.966 )
+tipo_peligro = "Enemigo"
+numero_peligros = 3
+
+[node name="SectorDePeligro5" parent="TriggersEnemigos" index="1" instance=ExtResource( 2 )]
+position = Vector2( 6406.76, 173.804 )
+tipo_peligro = "Enemigo"
+numero_peligros = 3
+
+[node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 3 )]
+position = Vector2( 6394.77, 1857.9 )
+
+[node name="BaseEnemiga" parent="ContenedorBaseEnemiga" index="0" instance=ExtResource( 4 )]
+position = Vector2( 5214.91, -1737.74 )
+hitpoints = 60.0
+numero_orbitales = 8
+
+[node name="BaseEnemiga2" parent="ContenedorBaseEnemiga" index="1" instance=ExtResource( 4 )]
+position = Vector2( 2594.25, 2997.42 )
+hitpoints = 60.0
+numero_orbitales = 8
+
+[node name="BaseEnemiga3" parent="ContenedorBaseEnemiga" index="2" instance=ExtResource( 4 )]
+position = Vector2( 8995.84, 323.635 )
+hitpoints = 60.0
+numero_orbitales = 8
+
+[node name="StarFieldBackground" parent="." index="11"]
+color_fondo = Color( 0.180392, 0.00392157, 0.00392157, 1 )
+
+[editable path="Hud"]
+[editable path="Hud/InfoTiempoRestante"]
+[editable path="Hud/InfoZonaRecarga"]
+[editable path="Hud/InfoMeteoritos"]
+[editable path="Hud/InfoLaser"]
+[editable path="Hud/InfoEscudo"]
+[editable path="Player"]
+[editable path="Player/Canion"]

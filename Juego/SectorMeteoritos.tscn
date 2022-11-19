@@ -221,7 +221,7 @@ position = Vector2( -1156.35, 387.326 )
 direccion = Vector2( 2, -1 )
 
 [node name="SpawnerMeteoritos10" parent="Spawners" instance=ExtResource( 1 )]
-position = Vector2( -1162.7, -342.879 )
+position = Vector2( -1165.22, -345.399 )
 
 [node name="SpawnerMeteoritos2" parent="Spawners" instance=ExtResource( 1 )]
 position = Vector2( 1150, 0 )
@@ -281,9 +281,10 @@ direccion = Vector2( -1, 1 )
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0.730769 )
-margin_top = 82.5448
-margin_right = 1946.0
-margin_bottom = 299.545
+margin_left = -2.5199
+margin_top = 160.66
+margin_right = 1943.48
+margin_bottom = 377.66
 color = Color( 0.427451, 0.290196, 0.290196, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

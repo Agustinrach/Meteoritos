@@ -42,10 +42,13 @@ position = Vector2( 0, -14 )
 [node name="PuntoDer" parent="Canion" index="1"]
 position = Vector2( 0, 14 )
 
+[node name="Impacto_sfx" parent="." index="3"]
+bus = "disparo_laser"
+
 [node name="Escudo" parent="." index="4" instance=ExtResource( 10 )]
 
 [node name="EstelaPuntoInicio" parent="." index="5" instance=ExtResource( 6 )]
-position = Vector2( -5.68452, 0.23597 )
+position = Vector2( -8.95484, 0.384621 )
 
 [node name="MotorSFX" parent="." index="6" instance=ExtResource( 8 )]
 stream = ExtResource( 7 )

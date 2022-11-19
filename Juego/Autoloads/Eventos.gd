@@ -23,3 +23,6 @@ signal actualizar_tiempo(tiempo_restante)
 
 signal minimapa_objeto_creado()
 signal minimapa_objeto_destruido() 
+ 
+
+signal nivel_completado()

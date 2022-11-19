@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://TemporalAssets/kenney_fontpackage/Fonts/Kenney Blocks.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Juego/Naves/player/player_orange.png" type="Texture" id=2]
+[ext_resource path="res://Juego/Menu/MenuPrincipal.gd" type="Script" id=3]
+[ext_resource path="res://Juego/Niveles/Fondos/StarFieldBackground.tscn" type="PackedScene" id=4]
+[ext_resource path="res://TemporalAssets/kenney_fontpackage/Fonts/Kenney Future.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 5 )
+
+[node name="MenuGanaste" type="Node"]
+script = ExtResource( 3 )
+
+[node name="StarFieldBackground" parent="." instance=ExtResource( 4 )]
+
+[node name="player_orange" type="Sprite" parent="."]
+position = Vector2( 940.615, 679.772 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -491.809
+margin_top = 4.75684
+margin_right = 758.191
+margin_bottom = 304.757
+custom_fonts/font = SubResource( 1 )
+text = "¡GANASTE!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonSalir" type="Button" parent="."]
+margin_left = 1388.13
+margin_top = 869.599
+margin_right = 1765.13
+margin_bottom = 988.599
+custom_fonts/font = SubResource( 2 )
+text = "SALIR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="BotonSalir" to="." method="_on_BotonSalir_pressed"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Juego/Estaciones/BaseEnemiga.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=4]
+
+[node name="Nivel10" instance=ExtResource( 1 )]
+prox_nivel = "res://Juego/Menu/MenuGanaste.tscn"
+
+[node name="Player" parent="." index="1"]
+position = Vector2( 386.502, 157.76 )
+hitpoints = 100.0
+
+[node name="SectorDePeligro" parent="TriggersEnemigos" index="0" instance=ExtResource( 3 )]
+position = Vector2( -413.721, -689.535 )
+tipo_peligro = "Enemigo"
+numero_peligros = 6
+
+[node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 4 )]
+position = Vector2( 520.074, -861.325 )
+
+[node name="EstacionRecarga2" parent="ContenedorEstaciones" index="1" instance=ExtResource( 4 )]
+position = Vector2( 384, 1752 )
+
+[node name="BaseEnemiga" parent="ContenedorBaseEnemiga" index="0" instance=ExtResource( 2 )]
+position = Vector2( 2921.29, -305.531 )
+
+[node name="BaseEnemiga2" parent="ContenedorBaseEnemiga" index="1" instance=ExtResource( 2 )]
+position = Vector2( 3213.29, 522.469 )
+
+[node name="BaseEnemiga3" parent="ContenedorBaseEnemiga" index="2" instance=ExtResource( 2 )]
+position = Vector2( 2769.29, 1498.47 )
+
+[editable path="Hud"]
+[editable path="Hud/InfoTiempoRestante"]
+[editable path="Hud/InfoZonaRecarga"]
+[editable path="Hud/InfoMeteoritos"]
+[editable path="Hud/InfoLaser"]
+[editable path="Hud/InfoEscudo"]
+[editable path="Player"]
+[editable path="Player/Canion"]

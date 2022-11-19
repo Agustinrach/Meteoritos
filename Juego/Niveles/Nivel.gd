@@ -20,7 +20,7 @@ export var rele_masa:PackedScene=null
 export var tiempo_limite:int=20
 export var musica_nivel:AudioStream = null
 export var musica_combate:AudioStream = null
-
+export (String,FILE,"*.tscn")var prox_nivel ="" 
 
 ## atributos onready
 onready var contenedor_proyectiles:Node
@@ -67,6 +67,7 @@ func conectar_Seniales() -> void:
 		Eventos.connect("nave_en_sector_peligro", self, "_on_nave_en_sector_peligro")
 		Eventos.connect("base_destruida",self,"_on_base_destruida")
 		Eventos.connect("spawn_orbital",self,"_on_spawn_orbital")
+		Eventos.connect("nivel_completado",self,"_on_nivel_completado")
 		
 func crear_contenedores() -> void:
 	contenedor_proyectiles = Node.new()
@@ -243,6 +244,11 @@ func crear_rele()->void:
 	add_child(new_rele_masa)
 	
 
+func _on_nivel_completado()->void:
+
+	yield(get_tree().create_timer(1.0),"timeout")
+	get_tree().change_scene(prox_nivel)
+
 
 func _on_RestartTimer_timeout():
 	Eventos.emit_signal("nivel_terminado")
@@ -256,3 +262,4 @@ func _on_ActualizadorTimer_timeout():
 	Eventos.emit_signal("actualizar_tiempo",tiempo_limite)
 	if tiempo_limite==0:
 		destruir_nivel()
+

@@ -54,6 +54,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("escudo") and not escudo.get_esta_activado():
 		escudo.activar()
 		
+		
 func _integrate_forces(_state: Physics2DDirectBodyState) -> void:
 	apply_central_impulse(empuje.rotated(rotation))
 	apply_torque_impulse(dir_rotacion * potencia_rotacion)
@@ -72,9 +73,10 @@ func player_input()->void:
 	empuje = Vector2.ZERO
 	if Input.is_action_pressed("mover_adelante"):
 		empuje = Vector2(potencia_motor,0)
+		motor_sfx.sonido_on()
 	elif Input.is_action_pressed("mover_atras"):
 		empuje = Vector2(-potencia_motor,0)	
-	
+		motor_sfx.sonido_on()
 	#rotacion
 	dir_rotacion = 0
 	if Input.is_action_pressed("rotar_antihorario"):

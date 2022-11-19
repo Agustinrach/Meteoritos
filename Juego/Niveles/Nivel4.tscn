@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Juego/Niveles/NivelBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Juego/Estaciones/EstacionRecarga.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Juego/Peligros/SectorDePeligro.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Juego/Estaciones/BaseEnemiga.tscn" type="PackedScene" id=4]
+
+[node name="Nivel4" instance=ExtResource( 1 )]
+tiempo_limite = 120
+prox_nivel = "res://Juego/Niveles/Nivel5.tscn"
+
+[node name="SectorDePeligro" parent="TriggersLLuviaMeteoritos" index="0" instance=ExtResource( 3 )]
+position = Vector2( 1275.92, 321.975 )
+rotation = 1.69471
+scale = Vector2( 6, 6 )
+collision_layer = 0
+tipo_peligro = "Meteorito"
+numero_peligros = 6
+
+[node name="EstacionRecarga" parent="ContenedorEstaciones" index="0" instance=ExtResource( 2 )]
+position = Vector2( 3251.67, 2269.23 )
+
+[node name="BaseEnemiga" parent="ContenedorBaseEnemiga" index="0" instance=ExtResource( 4 )]
+position = Vector2( 5873.3, 614.026 )
+hitpoints = 40.0
+numero_orbitales = 8
+
+[node name="StarFieldBackground" parent="." index="11"]
+color_fondo = Color( 0.156863, 0.117647, 0.117647, 1 )
+
+[editable path="Hud"]
+[editable path="Hud/InfoTiempoRestante"]
+[editable path="Hud/InfoZonaRecarga"]
+[editable path="Hud/InfoMeteoritos"]
+[editable path="Hud/InfoLaser"]
+[editable path="Hud/InfoEscudo"]
+[editable path="Player"]
+[editable path="Player/Canion"]

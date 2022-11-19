@@ -10,7 +10,7 @@ export var tiempo_visible: float = 5.0
 
 var escala_grilla:Vector2
 var player : Player = null
-var esta_visible:bool = false setget set_esta_visible
+var esta_visible:bool = true setget set_esta_visible
 
 #atributos onreeady
 onready var zona_renderizado:TextureRect= $CuadroMiniMapa/ContenedorIconos/ZonaRenderizadoMiniMapa
@@ -27,6 +27,7 @@ onready var items_mini_mapa : Dictionary ={}
 #metodos
 
 func _ready()->void:
+
 	set_process(false)
 	icono_player.position=zona_renderizado.rect_size *0.5
 	escala_grilla = zona_renderizado.rect_size / (get_viewport_rect().size * escala_zoom)
@@ -59,8 +60,10 @@ func conectar_seniales()->void:
 
 func _on_nivel_iniciado()->void:
 	player =  DatosJuego.get_player_actual()
+	set_esta_visible(false)
 	obtener_objetos_minimapa()
 	set_process(true)
+	
 	
 func _on_nave_destruida(nave:NaveBase, _posicion, _explosiones)	->void:
 	if nave is Player:
